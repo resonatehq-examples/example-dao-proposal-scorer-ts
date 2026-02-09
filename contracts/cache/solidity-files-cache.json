@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/flossypurse/agent-workspace/dao-proposal-scorer/contracts/contracts/ProposalScorer.sol": {
+      "lastModificationDate": 1770393813475,
+      "contentHash": "6fcca0d377c9842e02da91827be831b3",
+      "sourceName": "contracts/ProposalScorer.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ProposalScorer"
+      ]
+    }
+  }
+}

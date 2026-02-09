@@ -1,0 +1,23 @@
+{
+  "name": "dao-proposal-scorer-service",
+  "version": "1.0.0",
+  "description": "Resonate-powered off-chain scoring for DAO proposals",
+  "main": "dist/worker.js",
+  "scripts": {
+    "build": "tsc",
+    "worker": "tsx src/worker.ts",
+    "listener": "tsx src/blockchain/listener.ts",
+    "dev:worker": "tsx watch src/worker.ts",
+    "dev:listener": "tsx watch src/blockchain/listener.ts"
+  },
+  "dependencies": {
+    "@resonate/sdk": "file:../../resonate-sdk-ts",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}
