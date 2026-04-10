@@ -11,7 +11,7 @@
  * NOT the SDK internals. This keeps changes minimal and maintainable.
  */
 
-import { Resonate, type Context } from '@resonate/sdk';
+import { Resonate, type Context } from '@resonatehq/sdk';
 import crypto from 'crypto';
 import type { Commitment, CryptoResonateOptions } from './types';
 import { hashObject, sign, canonicalJSON } from './utils';
@@ -30,7 +30,6 @@ export class CryptoResonate extends Resonate {
       group: options.group,
       pid: options.pid,
       ttl: options.ttl,
-      auth: options.auth,
       token: options.token,
       verbose: options.verbose,
     });

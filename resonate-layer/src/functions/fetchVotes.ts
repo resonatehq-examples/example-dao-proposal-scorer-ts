@@ -1,4 +1,4 @@
-import type { Context } from '@resonate/sdk';
+import type { Context } from '@resonatehq/sdk';
 import { ethers } from 'ethers';
 import type { Vote } from '../types';
 
