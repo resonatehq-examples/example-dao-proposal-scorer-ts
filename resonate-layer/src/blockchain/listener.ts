@@ -66,7 +66,7 @@ async function main() {
   console.log('─'.repeat(60) + '\n');
   
   // Listen for ProposalCreated events
-  contract.on('ProposalCreated', async (proposalId, contentHash, proposer, event) => {
+  contract.on('ProposalCreated', async (proposalId: any, contentHash: any, proposer: any, event: any) => {
     try {
       console.log(`\n🔔 New Proposal Created!`);
       console.log(`  ID: ${proposalId}`);

@@ -41,7 +41,7 @@ async function main() {
     '0xf214f2b2cd398c806f84e317254e0f0b801d0643303237d97a22a48e01628897',
   ];
   
-  const proposer = new ethers.Wallet(privateKeys[0], provider);
+  const proposer = new ethers.Wallet(privateKeys[0]!, provider);
   const voters = privateKeys.slice(1, 11).map(pk => new ethers.Wallet(pk, provider));
   
   console.log(`📝 Contract: ${contractAddress}`);
@@ -54,7 +54,7 @@ async function main() {
     'function getProposal(uint256) external view returns (tuple(uint256 id, bytes32 contentHash, address proposer, uint256 createdAt, uint256 finalScore, bytes32 proofHash, address scorer, bool finalized))',
   ];
   
-  const contract = new ethers.Contract(contractAddress, contractAbi, proposer);
+  const contract = new ethers.Contract(contractAddress, contractAbi, proposer) as any;
   
   // Step 1: Create proposal
   console.log('📋 Step 1: Creating proposal...');
@@ -92,12 +92,12 @@ async function main() {
   ];
   
   for (const v of votes) {
-    const voterContract = contract.connect(voters[v.voter]);
+    const voterContract = contract.connect(voters[v.voter]!);
     const voteTx = await voterContract.vote(proposalId, v.support);
     await voteTx.wait();
     
     const supportText = v.support ? '✅ YES' : '❌ NO';
-    console.log(`  ${supportText} - ${voters[v.voter].address.slice(0, 8)}...`);
+    console.log(`  ${supportText} - ${voters[v.voter]!.address.slice(0, 8)}...`);
     
     // Small delay to simulate real voting
     await new Promise(resolve => setTimeout(resolve, 500));

@@ -1,4 +1,4 @@
-import type { Context } from '@resonate/sdk';
+import type { Context } from '@resonatehq/sdk';
 import type { Vote } from '../types';
 
 /**

@@ -1,4 +1,4 @@
-import type { Context } from '@resonate/sdk';
+import type { Context } from '@resonatehq/sdk';
 import { ethers } from 'ethers';
 import type { ScoringResult } from '../types';
 import { fetchVotes } from './fetchVotes';
@@ -47,7 +47,7 @@ export function* scoreProposal(
   const votes = yield* ctx.run(
     fetchVotes,
     proposalId,
-    ctx.options({ id: 'fetchVotes' })
+    ctx.options({})
   );
   
   // Step 2: Calculate voter reputations (durable child promise)
@@ -55,7 +55,7 @@ export function* scoreProposal(
   const reputations = yield* ctx.run(
     getReputations,
     votes,
-    ctx.options({ id: 'getReputations' })
+    ctx.options({})
   );
   
   // Step 3: Check voter eligibility (durable child promise)
@@ -64,7 +64,7 @@ export function* scoreProposal(
     checkEligibility,
     votes,
     proposalCreatedAt,
-    ctx.options({ id: 'checkEligibility' })
+    ctx.options({})
   );
   
   // Step 4: Calculate final score (durable child promise)
@@ -75,7 +75,7 @@ export function* scoreProposal(
     reputations,
     eligibility,
     proposalCreatedAt,
-    ctx.options({ id: 'calculateScore' })
+    ctx.options({})
   );
   
   console.log('\n' + '─'.repeat(60));
