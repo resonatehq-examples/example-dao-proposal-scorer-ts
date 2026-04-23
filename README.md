@@ -1,3 +1,11 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.png">
+    <img alt="DAO Proposal Scorer — Resonate example" src="./assets/banner-dark.png">
+  </picture>
+</p>
+
 # DAO Proposal Scorer - Resonate + Blockchain Example
 
 **✨ NEW: Now with Cryptographic Commitments!** See [CRYPTO-INTEGRATION.md](./CRYPTO-INTEGRATION.md) for details.
