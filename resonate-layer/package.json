@@ -11,7 +11,7 @@
     "dev:listener": "tsx watch src/blockchain/listener.ts"
   },
   "dependencies": {
-    "@resonatehq/sdk": "^0.10.0",
+    "@resonatehq/sdk": "^0.11.4",
     "dotenv": "^16.3.1",
     "ethers": "^6.9.0"
   },
